@@ -30,9 +30,9 @@ $users = $selectUsers->fetchAll(PDO::FETCH_ASSOC); // Fetch all users as an asso
                             <td><?= $user['name']?></td>
                             <td><?= $user['email']?></td>
                             <td>
-                                <a href="#" class="btn btn-sm btn-info">View</a>
-                                <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                                <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                                <a href="profile.php?id=<?= $user['id'] ?>" class="btn btn-sm btn-info">View</a>
+                                <a href="edit.php?id=<?= $user['id'] ?>" class="btn btn-sm btn-warning">Edit</a>
+                                <a href="delete.php?id=<?= $user['id'] ?>" class="btn btn-sm btn-danger">Delete</a>
                             </td>
                         </tr>
                     <?php }

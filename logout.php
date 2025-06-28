@@ -1,7 +1,8 @@
 <?php
 session_start();
-unset($_SESSION['username']); // Unset the session variable
-// protect your user against session fixation
-session_regenerate_id(true); // Regenerate session ID to prevent session fixation
-session_destroy(); // Destroy the session
-header('Location: login.php'); // Redirect to login page
+// Unset all of the session variables
+$_SESSION = array();
+session_regenerate_id(true);
+// Destroy the session
+session_destroy();
+header("Location: login.php");
